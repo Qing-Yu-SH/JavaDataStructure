@@ -62,4 +62,14 @@ public class TestTree {
         Morrisorder.morrisPos(root);
 
     }
+
+    @Test
+    public void test_thrTree(){
+        int[] preorder = new int[]{1,2,4,7,3,5,6};
+        int[] inorder = new int[]{4,7,2,1,5,3,6};
+        TreeNode root = ConstructTree.constructByPreAndIn(preorder, inorder);
+        ThrTree thrTree = new ThrTree();
+        thrTree.InOrderThreading(root);
+        thrTree.InOrderTraverse_Thr();
+    }
 }
