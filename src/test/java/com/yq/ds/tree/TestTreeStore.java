@@ -2,6 +2,8 @@ package com.yq.ds.tree;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+
 /**
  * @program: JavaDataStructure
  * @description:
@@ -11,7 +13,19 @@ import org.junit.Test;
 public class TestTreeStore {
 
     @Test
+    public void test_sequentialStorage(){
+        // 顺序存储结构
+        int[] preorder = new int[]{1,2,4,7,3,5,6};
+        int[] inorder = new int[]{4,7,2,1,5,3,6};
+        TreeNode root = ConstructTree.constructByPreAndIn(preorder, inorder);
+        TreeSequentialStorage storage = new TreeSequentialStorage(root);
+        int[] nodes = storage.getNodes();
+        System.out.println(Arrays.toString(nodes));
+    }
+
+    @Test
     public void test_treeParent(){
+        // 双亲表示法
         TreeParent<Character> tf = new TreeParent<>();
         tf.addNode('A',null);
         tf.addNode('B','A');
