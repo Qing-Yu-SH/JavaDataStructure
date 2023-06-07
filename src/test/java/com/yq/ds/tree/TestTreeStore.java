@@ -3,6 +3,8 @@ package com.yq.ds.tree;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @program: JavaDataStructure
@@ -40,6 +42,21 @@ public class TestTreeStore {
         System.out.println("节点 E 的父节点：\t" + tf.parent('E'));
         System.out.println("根节点信息：\t" + tf.root());
         System.out.println("根节点的孩子：\t" + tf.children(tf.getNode(0)));
+    }
+
+    @Test
+    public void test_treeChildren(){
+        Map<Character,Character> map = new HashMap<>();
+        map.put('A',null);
+        map.put('B','A');
+        map.put('C','A');
+        map.put('D','A');
+        map.put('E','B');
+        map.put('F','D');
+        map.put('G','F');
+        TreeChildren<Character> treeChildren = new TreeChildren<>();
+        treeChildren.construct(map);
+        treeChildren.printTree();
     }
 
 }
