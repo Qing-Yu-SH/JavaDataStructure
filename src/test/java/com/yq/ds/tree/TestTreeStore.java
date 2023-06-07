@@ -59,4 +59,19 @@ public class TestTreeStore {
         treeChildren.printTree();
     }
 
+    @Test
+    public void test_treeChildrenBrother(){
+        Map<Character,Character> map = new HashMap<>();
+        map.put('A',null);
+        map.put('B','A');
+        map.put('C','A');
+        map.put('D','A');
+        map.put('E','B');
+        map.put('F','D');
+        map.put('G','F');
+        TreeChildrenBrother<Character> childrenBrother = new TreeChildrenBrother<>();
+        TreeChildrenBrother<Character>.Node<Character> root = childrenBrother.construct(map);
+        childrenBrother.printTree(root);
+    }
+
 }
