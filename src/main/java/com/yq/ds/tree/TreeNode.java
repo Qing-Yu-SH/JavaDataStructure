@@ -6,20 +6,20 @@ package com.yq.ds.tree;
  * @author: Yuqing
  * @create: 2023-05-30 21:01
  **/
-public class TreeNode {
+public class TreeNode<E> {
 
-    int val;
+    E val;
     TreeNode left;
     TreeNode right;
 
     public TreeNode() {
     }
 
-    public TreeNode(int val) {
+    public TreeNode(E val) {
         this.val = val;
     }
 
-    public TreeNode(int val, TreeNode left, TreeNode right) {
+    public TreeNode(E val, TreeNode left, TreeNode right) {
         this.val = val;
         this.left = left;
         this.right = right;
