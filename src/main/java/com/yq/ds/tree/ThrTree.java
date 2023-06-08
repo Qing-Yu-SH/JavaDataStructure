@@ -6,7 +6,7 @@ package com.yq.ds.tree;
  * @author: Yuqing
  * @create: 2023-06-05 13:17
  **/
-public class ThrTree {
+public class ThrTree<E> {
 
     // 全局变量，指示遍历过程中的线索二叉树的前驱结点信息
     private BiThrNode preBN = null;
@@ -24,9 +24,9 @@ public class ThrTree {
     /**
      * 中序线索化
      */
-    BiThrNode InThreading(TreeNode root){
+    BiThrNode InThreading(TreeNode<E> root){
         if(root == null) return null;
-        BiThrNode node = new BiThrNode(root.val);
+        BiThrNode<E> node = new BiThrNode<>(root.val);
 
         // 左子树递归线索化
         node.left = InThreading(root.left);
@@ -59,7 +59,7 @@ public class ThrTree {
     /**
      * 带头结点的二叉树中序线索化
      */
-    void InOrderThreading(TreeNode root){
+    void InOrderThreading(TreeNode<E> root){
         // 头结点有左孩子，若树非空，则其左孩子为树根
         thr.LTag = 0;
         // 头结点的右孩子指针为右线索
@@ -114,16 +114,16 @@ public class ThrTree {
 /**
  * 线索二叉树节点
  */
-class BiThrNode{
-    int val;
-    BiThrNode left;
-    BiThrNode right;
+class BiThrNode<E>{
+    E val;
+    BiThrNode<E> left;
+    BiThrNode<E> right;
     int LTag,RTag;
 
     public BiThrNode() {
     }
 
-    public BiThrNode(int val) {
+    public BiThrNode(E val) {
         this.val = val;
     }
 }
