@@ -72,4 +72,41 @@ public class TestTree {
         thrTree.InOrderThreading(root);
         thrTree.InOrderTraverse_Thr();
     }
+
+    @Test
+    public void test_forestConverter(){
+        Forest<String> forest = constructForest();
+        ForestConverter<String> converter = new ForestConverter<>(forest);
+        TreeNode<String> tree = converter.Tree2BinaryTree(forest.trees.get(2));
+        Inorder.inOrder(tree);
+        System.out.println();
+        TreeNode<String> root = converter.Forest2BinaryTree();
+        Inorder.inOrder(root);
+    }
+
+    private Forest constructForest(){
+        MultipleTreeNode<String> nodeA = new MultipleTreeNode<String>("A");
+        MultipleTreeNode<String> nodeB = new MultipleTreeNode<String>("B");
+        MultipleTreeNode<String> nodeC = new MultipleTreeNode<String>("C");
+        MultipleTreeNode<String> nodeD = new MultipleTreeNode<String>("D");
+        nodeA.children.add(nodeB);
+        nodeA.children.add(nodeC);
+        nodeA.children.add(nodeD);
+
+        MultipleTreeNode<String> nodeE = new MultipleTreeNode<String>("E");
+        MultipleTreeNode<String> nodeF = new MultipleTreeNode<String>("F");
+        MultipleTreeNode<String> nodeG = new MultipleTreeNode<String>("G");
+        nodeE.children.add(nodeF);
+        nodeE.children.add(nodeG);
+
+        MultipleTreeNode<String> nodeH = new MultipleTreeNode<String>("H");
+        MultipleTreeNode<String> nodeI = new MultipleTreeNode<String>("I");
+        MultipleTreeNode<String> nodeJ = new MultipleTreeNode<String>("J");
+        nodeI.children.add(nodeJ);
+        nodeH.children.add(nodeI);
+
+        Forest<String> forest = new Forest<>();
+        forest.addTree(nodeA).addTree(nodeE).addTree(nodeH);
+        return forest;
+    }
 }
