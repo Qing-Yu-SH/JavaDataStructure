@@ -21,7 +21,7 @@ public class TestTreeStore {
         int[] inorder = new int[]{4,7,2,1,5,3,6};
         TreeNode root = ConstructTree.constructByPreAndIn(preorder, inorder);
         TreeSequentialStorage storage = new TreeSequentialStorage(root);
-        int[] nodes = storage.getNodes();
+        Object[] nodes = storage.getNodes();
         System.out.println(Arrays.toString(nodes));
     }
 
