@@ -6,16 +6,16 @@ package com.yq.ds.tree;
  * @author: Yuqing
  * @create: 2023-06-05 14:01
  **/
-public class TreeSequentialStorage {
+public class TreeSequentialStorage<E> {
 
-    private int[] nodes;
+    private Object[] nodes;
     private int height;
     private int nodeNum;
 
     public TreeSequentialStorage(TreeNode root) {
         this.height = getHeight(root);
         this.nodeNum = (int)Math.pow(2,height) - 1;
-        nodes = new int[nodeNum+1];
+        nodes = new Object[nodeNum+1];
         convert2Array(root,1);
     }
 
@@ -29,14 +29,14 @@ public class TreeSequentialStorage {
     /**
      * 将链式存储的二叉树转换为顺序存储
      */
-    private void convert2Array(TreeNode root,int id){
+    private void convert2Array(TreeNode<E> root,int id){
         if(root == null) return;
         nodes[id] = root.val;
         convert2Array(root.left,2*id);
         convert2Array(root.right,2*id+1);
     }
 
-    public int[] getNodes() {
+    public Object[] getNodes() {
         return nodes;
     }
 
