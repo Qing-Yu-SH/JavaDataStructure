@@ -29,8 +29,8 @@ public class Postorder {
     /**
      * 非递归后序遍历
      */
-    public static List<Integer> postorderTraversal(TreeNode root) {
-        List<Integer> ans = new ArrayList<>();
+    public static List<Object> postorderTraversal(TreeNode root) {
+        List<Object> ans = new ArrayList<>();
         if(root==null) return ans;
         Stack<TreeNode> stack = new Stack<>();
         TreeNode cur = root;
