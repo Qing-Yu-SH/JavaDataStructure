@@ -2,6 +2,9 @@ package com.yq.ds.tree;
 
 import org.junit.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @program: JavaDataStructure
  * @description:
@@ -108,5 +111,21 @@ public class TestTree {
         Forest<String> forest = new Forest<>();
         forest.addTree(nodeA).addTree(nodeE).addTree(nodeH);
         return forest;
+    }
+
+    @Test
+    public void test_huffmanTree(){
+        Map<String,Integer> map = new HashMap<>();
+        map.put("A",7);
+        map.put("B",5);
+        map.put("C",2);
+        map.put("D",6);
+        map.put("E",1);
+        HuffmanTree huffmanTree = new HuffmanTree();
+        huffmanTree.create(map);
+        Map<String, String> huffmanCode = huffmanTree.getHuffmanCode();
+        for(String node: huffmanCode.keySet()){
+            System.out.println(node + "：" + huffmanCode.get(node));
+        }
     }
 }
