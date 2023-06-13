@@ -13,10 +13,12 @@ public class AdjMatrix {
     // 邻接矩阵
     int[][] arcs;
     int vexNum,arcNum;
+    boolean hasWeight;
 
-    public AdjMatrix(int vexNum, int arcNum) {
+    public AdjMatrix(int vexNum, int arcNum, boolean hasWeight) {
         this.vexNum = vexNum;
         this.arcNum = arcNum;
+        this.hasWeight = hasWeight;
         vexs = new String[vexNum];
         arcs = new int[vexNum][vexNum];
     }

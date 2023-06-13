@@ -29,7 +29,7 @@ public class ConstructAdjMatrix {
         int vexNum = input.nextInt();
         System.out.print("请输入边数：");
         int arcNum = input.nextInt();
-        AdjMatrix graph = new AdjMatrix(vexNum, arcNum);
+        AdjMatrix graph = new AdjMatrix(vexNum, arcNum, hasWeight);
         // 有权值的情况，矩阵初始化为 Integer.MAX_VALUE，否则为 0
         if(hasWeight){
             for(int i=0;i < graph.vexNum;i++){
@@ -76,7 +76,7 @@ public class ConstructAdjMatrix {
     public AdjMatrix createMatrix(int code, boolean hasWeight, List<String> vex, List<String> adj){
         assert code==0 || code==1;
         assert vex!=null && adj!=null;
-        AdjMatrix matrix = new AdjMatrix(vex.size(), adj.size());
+        AdjMatrix matrix = new AdjMatrix(vex.size(), adj.size(), hasWeight);
         matrix.vexs = vex.toArray(new String[0]);
         // 有权值的情况，矩阵初始化为 Integer.MAX_VALUE，否则为 0
         if(hasWeight){
