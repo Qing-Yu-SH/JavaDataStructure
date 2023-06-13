@@ -81,7 +81,7 @@ public class AdjacencyList {
     public void createAdjacencyList(int code, boolean hasWeight, List<String> vex,List<String> adj){
         assert code==0 || code==1;
         assert vex!=null && adj!=null;
-        int vexNum = vex.size();
+        this.vexNum = vex.size();
         this.hasWeight = hasWeight;
         nodes = new HeadNode[vexNum];
         map = new HashMap<>();
