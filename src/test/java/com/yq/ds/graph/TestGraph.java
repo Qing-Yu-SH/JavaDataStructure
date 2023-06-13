@@ -81,4 +81,26 @@ public class TestGraph {
         DepthFirstSearch.DFS(matrix);
         DepthFirstSearch.DFS(adjacencyList);
     }
+
+    @Test
+    public void test_bfs(){
+        List<String> vex = Arrays.asList("A","B","C","D","E","F","G","H");
+        List<String> adj = new ArrayList<>();
+        adj.add("A B");
+        adj.add("A C");
+        adj.add("B D");
+        adj.add("B E");
+        adj.add("C G");
+        adj.add("C H");
+        adj.add("G H");
+        adj.add("D F");
+        adj.add("E F");
+        ConstructAdjMatrix construct = new ConstructAdjMatrix();
+        AdjMatrix matrix = construct.createMatrix(ConstructAdjMatrix.UDN_CODE, false,vex,adj);
+        AdjacencyList adjacencyList = new AdjacencyList();
+        adjacencyList.createAdjacencyList(AdjacencyList.UDN_CODE,false,vex,adj);
+
+        BreadthFirstSearch.BFS(matrix);
+        BreadthFirstSearch.BFS(adjacencyList);
+    }
 }
