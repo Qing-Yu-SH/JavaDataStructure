@@ -14,13 +14,13 @@ import java.util.Scanner;
 public class AdjacencyList {
 
     // 邻接表
-    private HeadNode[] nodes;
+    HeadNode[] nodes;
     // 结点 -> 索引
     private Map<String,Integer> map;
     // 结点数
-    private int vexNum;
+    int vexNum;
     // 是否包含权重
-    private boolean hasWeight;
+    boolean hasWeight;
 
     public static final int UDN_CODE = 0;
     public static final int DAG_CODE = 1;
