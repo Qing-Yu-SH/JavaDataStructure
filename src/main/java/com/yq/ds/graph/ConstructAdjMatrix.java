@@ -47,8 +47,11 @@ public class ConstructAdjMatrix {
             String v1 = input.next();
             System.out.print("请输入顶点v2：");
             String v2 = input.next();
-            System.out.print("请输入权值：");
-            int w = input.nextInt();
+            int w = 1;
+            if(hasWeight){
+                System.out.print("请输入权值：");
+                w = input.nextInt();
+            }
             int n = locateVex(graph,v1);
             int m = locateVex(graph,v2);
             graph.arcs[n][m] = w;
