@@ -2,6 +2,10 @@ package com.yq.ds.graph;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @program: JavaDataStructure
  * @description:
@@ -14,6 +18,23 @@ public class TestGraph {
     public void test_adjMatrix(){
         ConstructAdjMatrix construct = new ConstructAdjMatrix();
         AdjMatrix matrix = construct.createMatrix(ConstructAdjMatrix.DAG_CODE, true);
+        System.out.println(construct.printMatrix(matrix));
+    }
+
+    @Test
+    public void test_adjMatrix2(){
+        List<String> vex = Arrays.asList("A","B","C","D","E");
+        List<String> adj = new ArrayList<>();
+        adj.add("A B 2");
+        adj.add("A C 6");
+        adj.add("A E 2");
+        adj.add("C A 5");
+        adj.add("C D 1");
+        adj.add("D B 8");
+        adj.add("D E 7");
+        adj.add("E B 9");
+        ConstructAdjMatrix construct = new ConstructAdjMatrix();
+        AdjMatrix matrix = construct.createMatrix(ConstructAdjMatrix.DAG_CODE, true,vex,adj);
         System.out.println(construct.printMatrix(matrix));
     }
 

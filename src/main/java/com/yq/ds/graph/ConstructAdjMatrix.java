@@ -1,6 +1,8 @@
 package com.yq.ds.graph;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -60,6 +62,44 @@ public class ConstructAdjMatrix {
             }
         }
         return graph;
+    }
+
+
+    /**
+     * 创建邻接矩阵
+     * @param code 无向图 or 有向图
+     * @param hasWeight 是否有权值
+     * @return 邻接矩阵
+     */
+    public AdjMatrix createMatrix(int code, boolean hasWeight, List<String> vex, List<String> adj){
+        assert code==0 || code==1;
+        assert vex!=null && adj!=null;
+        AdjMatrix matrix = new AdjMatrix(vex.size(), adj.size());
+        matrix.vexs = vex.toArray(new String[0]);
+        // 有权值的情况，矩阵初始化为 Integer.MAX_VALUE，否则为 0
+        if(hasWeight){
+            for(int i=0;i < matrix.vexNum;i++){
+                Arrays.fill(matrix.arcs[i],Integer.MAX_VALUE);
+            }
+        }
+
+        for(int i=0;i<adj.size();i++){
+            String[] str = adj.get(i).split(" ");
+            String v1 = str[0];
+            String v2 = str[1];
+            int w = 1;
+            if(hasWeight){
+                w = Integer.parseInt(str[2]);
+            }
+            int n = locateVex(matrix,v1);
+            int m = locateVex(matrix,v2);
+            matrix.arcs[n][m] = w;
+            if(code == UDN_CODE){
+                matrix.arcs[m][n] = w;
+            }
+        }
+
+        return matrix;
     }
 
     int locateVex(AdjMatrix G,String v){
