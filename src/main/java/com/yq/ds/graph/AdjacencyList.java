@@ -1,6 +1,7 @@
 package com.yq.ds.graph;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -24,6 +25,11 @@ public class AdjacencyList {
     public static final int UDN_CODE = 0;
     public static final int DAG_CODE = 1;
 
+    /**
+     * 创建邻接表
+     * @param code 无向图 or 有向图
+     * @param hasWeight 是由有权值
+     */
     public void createAdjacencyList(int code,boolean hasWeight){
         assert code==0 || code==1;
         Scanner input=new Scanner(System.in);
@@ -68,6 +74,40 @@ public class AdjacencyList {
                 connect(v2Index,v1Index,w);
             }
 
+        }
+    }
+
+
+    public void createAdjacencyList(int code, boolean hasWeight, List<String> vex,List<String> adj){
+        assert code==0 || code==1;
+        assert vex!=null && adj!=null;
+        int vexNum = vex.size();
+        this.hasWeight = hasWeight;
+        nodes = new HeadNode[vexNum];
+        map = new HashMap<>();
+
+        // 建立头结点表
+        for(int i=0;i<vexNum;i++){
+            nodes[i] = new HeadNode(vex.get(i));
+            map.put(vex.get(i),i);
+        }
+
+        for (String s : adj) {
+            String[] str = s.split(" ");
+            String v1 = str[0];
+            String v2 = str[1];
+            int w = 0;
+            if (hasWeight) {
+                w = Integer.parseInt(str[2]);
+            }
+            int v1Index = locVex(v1);
+            int v2Index = locVex(v2);
+
+            // 保存边信息
+            connect(v1Index, v2Index, w);
+            if (code == UDN_CODE) {
+                connect(v2Index, v1Index, w);
+            }
         }
     }
 
@@ -125,16 +165,40 @@ public class AdjacencyList {
      */
     public void print(){
         assert nodes != null;
-        System.out.println("\n邻接表信息：\n");
+        System.out.println("\n邻接表信息：");
         System.out.println("表头结点\t边信息");
         for (HeadNode node: nodes){
             StringBuilder sb = new StringBuilder();
-            sb.append(node.data + " -->  " + "\t");
+            sb.append(node.data).append(" -->  ").append("\t");
             EdgeNode edgeNode = node.firstArc;
             while(edgeNode != null){
                 sb.append(getDataByPos(edgeNode.adjVex));
                 if(hasWeight){
-                    sb.append(" : " + edgeNode.w);
+                    sb.append(" : ").append(edgeNode.w);
+                }
+                sb.append("\t");
+                edgeNode = edgeNode.nextArc;
+            }
+            System.out.println(sb.toString());
+        }
+    }
+
+    /**
+     * 打印邻接表
+     */
+    public void printWithIndex(){
+        assert nodes != null;
+        System.out.println("\n邻接表信息：");
+        System.out.println("表头结点\t边信息");
+        for (int i=0;i<nodes.length;i++){
+            HeadNode node = nodes[i];
+            StringBuilder sb = new StringBuilder();
+            sb.append(i).append(" : ").append(node.data).append(" -->  ").append("\t");
+            EdgeNode edgeNode = node.firstArc;
+            while(edgeNode != null){
+                sb.append(edgeNode.adjVex);
+                if(hasWeight){
+                    sb.append(" : ").append(edgeNode.w);
                 }
                 sb.append("\t");
                 edgeNode = edgeNode.nextArc;

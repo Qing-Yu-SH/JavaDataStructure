@@ -44,4 +44,19 @@ public class TestGraph {
         adjacencyList.createAdjacencyList(AdjacencyList.UDN_CODE,false);
         adjacencyList.print();
     }
+
+    @Test
+    public void test_adjacencyList2(){
+        List<String> vex = Arrays.asList("A","B","C","D","E");
+        List<String> adj = new ArrayList<>();
+        adj.add("A B");
+        adj.add("A C");
+        adj.add("B E");
+        adj.add("C E");
+        adj.add("C D");
+        adj.add("D E");
+        AdjacencyList adjacencyList = new AdjacencyList();
+        adjacencyList.createAdjacencyList(AdjacencyList.UDN_CODE,false,vex,adj);
+        adjacencyList.printWithIndex();
+    }
 }
