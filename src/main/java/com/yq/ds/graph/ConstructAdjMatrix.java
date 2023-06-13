@@ -69,6 +69,8 @@ public class ConstructAdjMatrix {
      * 创建邻接矩阵
      * @param code 无向图 or 有向图
      * @param hasWeight 是否有权值
+     * @param vex 结点表
+     * @param adj 边表
      * @return 邻接矩阵
      */
     public AdjMatrix createMatrix(int code, boolean hasWeight, List<String> vex, List<String> adj){
