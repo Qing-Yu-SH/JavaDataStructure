@@ -16,4 +16,11 @@ public class TestGraph {
         AdjMatrix matrix = construct.createMatrix(ConstructAdjMatrix.DAG_CODE, true);
         System.out.println(construct.printMatrix(matrix));
     }
+
+    @Test
+    public void test_adjacencyList(){
+        AdjacencyList adjacencyList = new AdjacencyList();
+        adjacencyList.createAdjacencyList(AdjacencyList.UDN_CODE,false);
+        adjacencyList.print();
+    }
 }
