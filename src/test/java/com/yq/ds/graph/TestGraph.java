@@ -364,4 +364,46 @@ public class TestGraph {
         floyd.floyd_AL(adjacencyList);
     }
 
+    @Test
+    public void test_topologicalAM(){
+        List<String> vex = Arrays.asList("A","B","C","D","E","F","G","I","H");
+        List<String> adj = new ArrayList<>();
+        adj.add("A C");
+        adj.add("A D");
+        adj.add("B C");
+        adj.add("B E");
+        adj.add("C F");
+        adj.add("C G");
+        adj.add("D F");
+        adj.add("E I");
+        adj.add("F H");
+        adj.add("G H");
+        adj.add("I H");
+        ConstructAdjMatrix construct = new ConstructAdjMatrix();
+        AdjMatrix matrix = construct.createMatrix(ConstructAdjMatrix.DAG_CODE, false, vex, adj);
+        TopologicalSort topologicalSort = new TopologicalSort();
+        topologicalSort.topological_AM(matrix);
+    }
+
+    @Test
+    public void test_topologicalAL(){
+        List<String> vex = Arrays.asList("A","B","C","D","E","F","G","I","H");
+        List<String> adj = new ArrayList<>();
+        adj.add("A C");
+        adj.add("A D");
+        adj.add("B C");
+        adj.add("B E");
+        adj.add("C F");
+        adj.add("C G");
+        adj.add("D F");
+        adj.add("E I");
+        adj.add("F H");
+        adj.add("G H");
+        adj.add("I H");
+        AdjacencyList adjacencyList = new AdjacencyList();
+        adjacencyList.createAdjacencyList(AdjacencyList.DAG_CODE,false,vex,adj);
+        TopologicalSort topologicalSort = new TopologicalSort();
+        topologicalSort.topological_AL(adjacencyList);
+    }
+
 }
