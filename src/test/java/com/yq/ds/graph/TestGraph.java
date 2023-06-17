@@ -296,4 +296,36 @@ public class TestGraph {
         dijkstra.dijkstra_AL(adjacencyList,0);
     }
 
+    @Test
+    public void test_dijkstraAM2(){
+        List<String> vex = Arrays.asList("A","B","C","D","E");
+        List<String> adj = new ArrayList<>();
+        adj.add("A E 100");
+        adj.add("A D 20");
+        adj.add("A C 5");
+        adj.add("B C 2");
+        adj.add("C D 10");
+        adj.add("D E 60");
+        ConstructAdjMatrix construct = new ConstructAdjMatrix();
+        AdjMatrix matrix = construct.createMatrix(ConstructAdjMatrix.DAG_CODE, true, vex, adj);
+        Dijkstra2 dijkstra = new Dijkstra2();
+        dijkstra.dijkstra_AM(matrix,0);
+    }
+
+    @Test
+    public void test_dijkstraAL2(){
+        List<String> vex = Arrays.asList("A","B","C","D","E");
+        List<String> adj = new ArrayList<>();
+        adj.add("A E 100");
+        adj.add("A D 20");
+        adj.add("A C 5");
+        adj.add("B C 2");
+        adj.add("C D 10");
+        adj.add("D E 60");
+        AdjacencyList adjacencyList = new AdjacencyList();
+        adjacencyList.createAdjacencyList(AdjacencyList.DAG_CODE,true,vex,adj);
+        Dijkstra2 dijkstra = new Dijkstra2();
+        dijkstra.dijkstra_AL(adjacencyList,0);
+    }
+
 }
