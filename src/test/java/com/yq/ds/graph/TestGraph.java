@@ -328,4 +328,40 @@ public class TestGraph {
         dijkstra.dijkstra_AL(adjacencyList,0);
     }
 
+    @Test
+    public void test_floydAM(){
+        List<String> vex = Arrays.asList("A","B","C","D");
+        List<String> adj = new ArrayList<>();
+        adj.add("A B 1");
+        adj.add("A D 4");
+        adj.add("B C 9");
+        adj.add("B D 2");
+        adj.add("C A 2");
+        adj.add("C B 5");
+        adj.add("C D 8");
+        adj.add("D C 6");
+        ConstructAdjMatrix construct = new ConstructAdjMatrix();
+        AdjMatrix matrix = construct.createMatrix(ConstructAdjMatrix.DAG_CODE, true, vex, adj);
+        Floyd floyd = new Floyd();
+        floyd.floyd_AM(matrix);
+    }
+
+    @Test
+    public void test_floydAL(){
+        List<String> vex = Arrays.asList("A","B","C","D");
+        List<String> adj = new ArrayList<>();
+        adj.add("A B 1");
+        adj.add("A D 4");
+        adj.add("B C 9");
+        adj.add("B D 2");
+        adj.add("C A 2");
+        adj.add("C B 5");
+        adj.add("C D 8");
+        adj.add("D C 6");
+        AdjacencyList adjacencyList = new AdjacencyList();
+        adjacencyList.createAdjacencyList(AdjacencyList.DAG_CODE,true,vex,adj);
+        Floyd floyd = new Floyd();
+        floyd.floyd_AL(adjacencyList);
+    }
+
 }
