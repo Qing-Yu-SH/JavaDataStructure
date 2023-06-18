@@ -36,3 +36,28 @@ Java 版数据结构
 * 树的存储结构：孩子兄弟法    -   TreeChildrenBrother
 * 森林与二叉树的转换    -   ForestConverter
 * 哈夫曼树    -   HuffmanTree
+
+
+
+## 4.图（com.yq.ds.graph）
+
+> 相关内容浅谈：[数据结构（Java版） - 图 - 掘金 (juejin.cn)](https://juejin.cn/post/7237540467428393015#heading-11)
+
+* 邻接矩阵    -    AdjMatrix、ConstructAdjMatrix
+* 邻接表    -    AdjacencyList
+* 深度优先遍历    -    DepthFirstSearch
+* 广度优先搜索    -    BreadthFirstSearch
+* 最小生成树：普利姆算法(Prim算法)    -    Prim、Prim2
+* 最小生成树：克鲁斯卡尔算法(Kruskal算法)    -    Kruskal、Kruskal2
+* 最短路径：迪杰斯特拉算法(Dijkstra算法)    -    Dijkstra、Dijkstra2
+* 最短路径：弗洛伊德算法(Floyd算法)    -    Floyd
+* 拓扑排序    -    TopologicalSort
+* 关键路径    -    CriticalPath
+
+
+
+## 5.查找（com.yq.ds.search）
+
+> 相关内容浅谈：[数据结构（Java版） - 查找 - 掘金 (juejin.cn)](https://juejin.cn/post/7237694780373106748)
+
+* 顺序查找    -    OrderSearch
