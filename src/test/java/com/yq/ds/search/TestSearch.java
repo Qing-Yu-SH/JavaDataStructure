@@ -47,4 +47,16 @@ public class TestSearch {
         int pos2 = orderSearch.orderSearchWithoutSentinel(elements, 220);
         System.out.println("元素 220 的位置：" + pos2);
     }
+
+    @Test
+    public void test_binarySearch(){
+        Integer[] elements = new Integer[]{0,2,5,6,6,6,8,9,10,12,16,22,26,32,36,38,52,56,62,66,72,82};
+        BinarySearch binarySearch = new BinarySearch();
+        int pos = binarySearch.binarySearch(elements, 6);
+        System.out.println("元素 6 位置：" + pos);
+        int pos2 = binarySearch.binarySearch_LeftBound(elements,6);
+        System.out.println("元素 6 左侧位置：" + pos2);
+        int pos3 = binarySearch.binarySearch_RightBound(elements,6);
+        System.out.println("元素 6 右侧位置：" + pos3);
+    }
 }

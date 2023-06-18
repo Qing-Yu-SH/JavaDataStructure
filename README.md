@@ -61,3 +61,5 @@ Java 版数据结构
 > 相关内容浅谈：[数据结构（Java版） - 查找 - 掘金 (juejin.cn)](https://juejin.cn/post/7237694780373106748)
 
 * 顺序查找    -    OrderSearch
+
+* 二分查找    -    BinarySearch
