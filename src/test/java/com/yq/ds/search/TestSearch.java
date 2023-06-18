@@ -59,4 +59,36 @@ public class TestSearch {
         int pos3 = binarySearch.binarySearch_RightBound(elements,6);
         System.out.println("元素 6 右侧位置：" + pos3);
     }
+
+    @Test
+    public void test_blockSearch(){
+        // 22 46 66 82 100
+        Integer[] elements = new Integer[]{20,22,2,16,6, 26,46,32,36,28, 50,62,55,56,66, 72,68,70,69,82, 85,96,92,100,86};
+        BlockSearch.BlockTable[] blockTables = new BlockSearch.BlockTable[]{
+                new BlockSearch.BlockTable(1,0,4),
+                new BlockSearch.BlockTable(6,5,9),
+                new BlockSearch.BlockTable(14,10,14),
+                new BlockSearch.BlockTable(19,15,19),
+                new BlockSearch.BlockTable(23,20,24)
+        };
+        BlockSearch<Integer> blockSearch = new BlockSearch<>(elements,blockTables);
+        int pos = blockSearch.blockSearch(0);
+        System.out.println("元素 0 位置：" + (pos==-1 ? "不存在":pos));
+        int pos2 = blockSearch.blockSearch(2);
+        System.out.println("元素 2 位置：" + pos2);
+        int pos3 = blockSearch.blockSearch(22);
+        System.out.println("元素 22 位置：" + pos3);
+        int pos4 = blockSearch.blockSearch(26);
+        System.out.println("元素 26 位置：" + pos4);
+        int pos5 = blockSearch.blockSearch(52);
+        System.out.println("元素 52 位置：" + (pos5==-1 ? "不存在":pos5));
+        int pos6 = blockSearch.blockSearch(66);
+        System.out.println("元素 66 位置：" + pos6);
+        int pos7 = blockSearch.blockSearch(68);
+        System.out.println("元素 68 位置：" + pos7);
+        int pos8 = blockSearch.blockSearch(86);
+        System.out.println("元素 86 位置：" + pos8);
+        int pos9 = blockSearch.blockSearch(102);
+        System.out.println("元素 102 位置：" + (pos9==-1 ? "不存在":pos9));
+    }
 }
