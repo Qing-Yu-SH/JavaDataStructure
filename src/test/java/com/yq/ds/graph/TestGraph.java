@@ -406,4 +406,46 @@ public class TestGraph {
         topologicalSort.topological_AL(adjacencyList);
     }
 
+    @Test
+    public void test_criticalPathAM(){
+        List<String> vex = Arrays.asList("A","B","C","D","E","F","G","H","I");
+        List<String> adj = new ArrayList<>();
+        adj.add("A B 6");
+        adj.add("A C 4");
+        adj.add("A D 5");
+        adj.add("B E 1");
+        adj.add("C E 1");
+        adj.add("D F 2");
+        adj.add("E G 9");
+        adj.add("E H 7");
+        adj.add("F H 4");
+        adj.add("G I 2");
+        adj.add("H I 4");
+        ConstructAdjMatrix construct = new ConstructAdjMatrix();
+        AdjMatrix matrix = construct.createMatrix(ConstructAdjMatrix.DAG_CODE, true, vex, adj);
+        CriticalPath criticalPath = new CriticalPath();
+        criticalPath.criticalPath_AM(matrix);
+    }
+
+    @Test
+    public void test_criticalPathAL(){
+        List<String> vex = Arrays.asList("A","B","C","D","E","F","G","H","I");
+        List<String> adj = new ArrayList<>();
+        adj.add("A B 6");
+        adj.add("A C 4");
+        adj.add("A D 5");
+        adj.add("B E 1");
+        adj.add("C E 1");
+        adj.add("D F 2");
+        adj.add("E G 9");
+        adj.add("E H 7");
+        adj.add("F H 4");
+        adj.add("G I 2");
+        adj.add("H I 4");
+        AdjacencyList adjacencyList = new AdjacencyList();
+        adjacencyList.createAdjacencyList(AdjacencyList.DAG_CODE,true,vex,adj);
+        CriticalPath criticalPath = new CriticalPath();
+        criticalPath.criticalPath_AL(adjacencyList);
+    }
+
 }
