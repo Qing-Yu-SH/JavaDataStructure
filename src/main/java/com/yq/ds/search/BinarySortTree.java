@@ -157,18 +157,4 @@ public class BinarySortTree<E extends Comparable> {
         cur.right = node.right;
         return cur;
     }
-
-
-    private class TreeNode<E extends Comparable> {
-        E val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(E val) { this.val = val; }
-        TreeNode(E val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 }
