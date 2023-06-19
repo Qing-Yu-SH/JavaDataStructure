@@ -91,4 +91,14 @@ public class TestSearch {
         int pos9 = blockSearch.blockSearch(102);
         System.out.println("元素 102 位置：" + (pos9==-1 ? "不存在":pos9));
     }
+
+    @Test
+    public void test_binarySortTree(){
+        Integer[] elements = new Integer[]{0,5,2,6,32,8,9,12,22,52,62,72,86,96,100,102,106,112,200,105,108};
+        BinarySortTree<Integer> binarySortTree = new BinarySortTree<>(elements);
+        boolean pos = binarySortTree.searchInBST(2);
+        System.out.println("元素 2 是否存在：" + pos);
+        boolean pos2 = binarySortTree.searchInBST(220);
+        System.out.println("元素 220 是否存在：" + pos2);
+    }
 }
