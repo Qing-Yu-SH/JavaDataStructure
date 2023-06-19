@@ -159,7 +159,7 @@ public class BinarySortTree<E extends Comparable> {
     }
 
 
-    class TreeNode<E extends Comparable> {
+    private class TreeNode<E extends Comparable> {
         E val;
         TreeNode left;
         TreeNode right;
