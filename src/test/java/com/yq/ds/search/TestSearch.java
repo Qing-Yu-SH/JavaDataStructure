@@ -100,5 +100,11 @@ public class TestSearch {
         System.out.println("元素 2 是否存在：" + pos);
         boolean pos2 = binarySortTree.searchInBST(220);
         System.out.println("元素 220 是否存在：" + pos2);
+        binarySortTree.addNode(220);
+        boolean pos3 = binarySortTree.searchInBST(220);
+        System.out.println("元素 220 是否存在：" + pos3);
+        binarySortTree.deleteNode(220);
+        boolean pos4 = binarySortTree.searchInBST(220);
+        System.out.println("元素 220 是否存在：" + pos4);
     }
 }
