@@ -107,4 +107,17 @@ public class TestSearch {
         boolean pos4 = binarySortTree.searchInBST(220);
         System.out.println("元素 220 是否存在：" + pos4);
     }
+
+    @Test
+    public void test_balanceBinaryTree(){
+        Integer[] elements = new Integer[]{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20,21,22};
+        BalancedBinaryTree<Integer> balancedBinaryTree = new BalancedBinaryTree<>();
+        balancedBinaryTree.createAVL(elements);
+        int height = balancedBinaryTree.getHeight(22);
+        System.out.println("元素 22 所在高度：" + height);
+        int height2 = balancedBinaryTree.getHeight(7);
+        System.out.println("元素 7 所在高度：" + height2);
+        boolean pos = balancedBinaryTree.searchAVL(20);
+        System.out.println("元素 20 是否存在：" + pos);
+    }
 }

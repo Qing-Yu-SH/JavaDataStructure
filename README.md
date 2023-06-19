@@ -63,3 +63,7 @@ Java 版数据结构
 * 顺序查找    -    OrderSearch
 
 * 二分查找    -    BinarySearch
+
+* 分块查找    -    BlockSearch
+* 二叉排序树    -    BinarySortTree
+* 平衡二叉树    -    BalancedBinaryTree
