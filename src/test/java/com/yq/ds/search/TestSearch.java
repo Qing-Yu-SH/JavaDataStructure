@@ -120,4 +120,27 @@ public class TestSearch {
         boolean pos = balancedBinaryTree.searchAVL(20);
         System.out.println("元素 20 是否存在：" + pos);
     }
+
+    @Test
+    public void test_bTree(){
+        Integer[] elements = new Integer[]{46,22,2,12,37,53,90,50,62,70,100,32,26,85,7};
+        BTree<Integer> bTree = new BTree<>();
+        for(Integer element: elements){
+            bTree.insertKey(element);
+        }
+        boolean pos = bTree.search(62);
+        System.out.println("元素 62 是否存在：" + pos);
+        boolean pos2 = bTree.search(50);
+        System.out.println("元素 50 是否存在：" + pos2);
+        bTree.deleteKey(50);
+        boolean pos3 = bTree.search(50);
+        System.out.println("元素 50 是否存在：" + pos3);
+        boolean pos4 = bTree.search(90);
+        System.out.println("元素 90 是否存在：" + pos4);
+        bTree.deleteKey(90);
+        boolean pos5 = bTree.search(90);
+        System.out.println("元素 90 是否存在：" + pos5);
+        boolean pos6 = bTree.search(102);
+        System.out.println("元素 102 是否存在：" + pos6);
+    }
 }
