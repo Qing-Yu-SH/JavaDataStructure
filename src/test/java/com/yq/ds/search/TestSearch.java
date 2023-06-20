@@ -143,4 +143,20 @@ public class TestSearch {
         boolean pos6 = bTree.search(102);
         System.out.println("元素 102 是否存在：" + pos6);
     }
+
+    @Test
+    public void test_hashTable(){
+        Integer[] elements = new Integer[]{22,22,2,12,36,53,220};
+        HashTable<Integer> hashTable = new HashTable<>(20);
+        for (Integer element: elements){
+            boolean insert = hashTable.insert(element);
+            System.out.println("插入元素 " + element + " ：" + (insert ? "成功":"失败"));
+        }
+        int pos = hashTable.select(22);
+        System.out.println("元素 22 的位置：" + pos);
+        int pos2 = hashTable.select(2);
+        System.out.println("元素 2 的位置： " + pos2);
+        int pos3 = hashTable.select(36);
+        System.out.println("元素 36 的位置： " + pos3);
+    }
 }
