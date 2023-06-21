@@ -66,3 +66,5 @@ Java 版数据结构
 * 二叉排序树    -    BinarySortTree
 * 平衡二叉树    -    BalancedBinaryTree
 * B-树    -    BTree
+* 散列表   -    HashTable
+* 前缀树   -    TrieMap

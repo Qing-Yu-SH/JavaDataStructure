@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.*;
+
 /**
  * @program: JavaDataStructure
  * @description:
@@ -158,5 +160,43 @@ public class TestSearch {
         System.out.println("元素 2 的位置： " + pos2);
         int pos3 = hashTable.select(36);
         System.out.println("元素 36 的位置： " + pos3);
+    }
+
+    @Test
+    public void test_trieMap(){
+        Map<String,Integer> map = new HashMap<String,Integer>(){
+            {
+                put("the",1);
+                put("them",2);
+                put("that",5);
+                put("future",6);
+                put("loving",22);
+            }
+        };
+        TrieMap<Integer> trieMap = new TrieMap<>();
+        for(String key: map.keySet()){
+            trieMap.put(key,map.get(key));
+        }
+        Integer val = trieMap.get("them");
+        System.out.println("键 them 的值：" + val);
+        String shortestPrefixOf = trieMap.shortestPrefixOf("themxyz");
+        System.out.println("最短前缀：" + shortestPrefixOf);
+        String longestPrefixOf = trieMap.longestPrefixOf("themxyz");
+        System.out.println("最长前缀：" + longestPrefixOf);
+        List<String> keyList = trieMap.keysWithPrefix("th");
+        System.out.println("前缀为 th 的键：" + Arrays.toString(keyList.toArray()));
+        boolean existWithPrefix = trieMap.hasKeyWithPrefix("the");
+        System.out.println("前缀为 the 的键是否存在：" + existWithPrefix);
+        List<String> keysWithPattern = trieMap.keysWithPattern("th..");
+        System.out.println("符合通配符表达式 th.. 的键：" + Arrays.toString(keysWithPattern.toArray()));
+        boolean existWithPattern = trieMap.hasKeyWithPattern("fu.ur.");
+        System.out.println("符合通配符表达式 fu.ur. 的键是否存在：" + existWithPattern);
+        boolean exist = trieMap.containsKey("the");
+        System.out.println("键 the 是否存在：" + exist);
+        System.out.println("前缀树中的键数量：" + trieMap.size());
+        trieMap.remove("the");
+        boolean exist2 = trieMap.containsKey("the");
+        System.out.println("键 the 是否存在：" + exist2);
+        System.out.println("前缀树中的键数量：" + trieMap.size());
     }
 }
