@@ -51,4 +51,12 @@ public class TestSort {
         System.out.println(Arrays.toString(nums2));
     }
 
+    @Test
+    public void test_shellSort(){
+        int[] nums = new int[]{50,36,62,97,82,16,22,50,55,6};
+        int[] dt = new int[]{5,3,1};
+        ShellInsertSort.shellSort(nums,dt);
+        System.out.println(Arrays.toString(nums));
+    }
+
 }
