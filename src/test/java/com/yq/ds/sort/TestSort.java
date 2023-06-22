@@ -87,4 +87,14 @@ public class TestSort {
         System.out.println(Arrays.toString(nums));
     }
 
+    @Test
+    public void test_heapSort(){
+        int[] nums = new int[]{50,36,62,97,82,16,22,50,55,6};
+        HeapSort.heapSort(nums,HeapSort.CODE_MAX_HEAP);
+        System.out.println(Arrays.toString(nums));
+        int[] nums2 = new int[]{50,36,62,97,82,16,22,50,55,6};
+        HeapSort.heapSort(nums2,HeapSort.CODE_MIN_HEAP);
+        System.out.println(Arrays.toString(nums2));
+    }
+
 }
