@@ -97,4 +97,11 @@ public class TestSort {
         System.out.println(Arrays.toString(nums2));
     }
 
+    @Test
+    public void test_mergeSort(){
+        int[] nums = new int[]{50,36,62,97,82,16,22,50,55,6};
+        MergeSort.mergeSort(nums);
+        System.out.println(Arrays.toString(nums));
+    }
+
 }
