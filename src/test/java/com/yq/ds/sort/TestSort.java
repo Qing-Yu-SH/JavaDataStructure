@@ -66,4 +66,11 @@ public class TestSort {
         System.out.println(Arrays.toString(nums));
     }
 
+    @Test
+    public void test_quickSort(){
+        int[] nums = new int[]{50,36,62,97,82,16,22,50,55,6};
+        QuickSort.quickSort(nums);
+        System.out.println(Arrays.toString(nums));
+    }
+
 }
