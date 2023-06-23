@@ -121,4 +121,23 @@ public class TestSort {
         System.out.println(Arrays.toString(nums2));
     }
 
+    @Test
+    public void test_bucketSort(){
+        int[] nums = new int[]{50,36,62,97,82,16,22,50,55,6};
+        BucketSort.bucketSort_Array(nums);
+        long end = System.nanoTime();
+        System.out.println(Arrays.toString(nums));
+        System.out.printf("以数组为桶的桶排序的执行时长：%.2f 微秒.\n", (end - startTime)/1000.0);
+        int[] nums2 = new int[]{50,36,62,97,82,16,22,50,55,6};
+        BucketSort.bucketSort_Linked(nums2);
+        long end2 = System.nanoTime();
+        System.out.println(Arrays.toString(nums2));
+        System.out.printf("以链表为桶的桶排序的执行时长：%.2f 微秒.\n", (end2 - end)/1000.0);
+        int[] nums3 = new int[]{50,36,62,97,82,16,22,50,55,6};
+        BucketSort.bucketSort_Compromise(nums3);
+        long end3 = System.nanoTime();
+        System.out.println(Arrays.toString(nums3));
+        System.out.printf("采用折中的桶排序的执行时长：%.2f 微秒.\n", (end3 - end2)/1000.0);
+    }
+
 }

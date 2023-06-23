@@ -86,3 +86,4 @@ Java 版数据结构
 * 归并排序   -    MergeSort
 * 计数排序   -    CountingSort
 * 基数排序   -    RadixSort
+* 桶排序   -    BucketSort
