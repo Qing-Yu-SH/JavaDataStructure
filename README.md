@@ -84,3 +84,4 @@ Java 版数据结构
 * 选择排序：树形选择排序   -    TreeSelectSort
 * 选择排序：堆排序   -    HeapSort
 * 归并排序   -    MergeSort
+* 计数排序   -    CountingSort
