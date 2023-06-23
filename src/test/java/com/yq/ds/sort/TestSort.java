@@ -111,4 +111,14 @@ public class TestSort {
         System.out.println(Arrays.toString(nums));
     }
 
+    @Test
+    public void test_radixSort(){
+        int[] nums = new int[]{68,62,20,2,86,15,51,9,92,36};
+        RadixSort.radixSort(nums);
+        System.out.println(Arrays.toString(nums));
+        int[] nums2 = new int[]{-1,68,62,20,2,86,-102,15,51,-2,9,92,36,-8,-6};
+        RadixSort.radixSortWithNegative(nums2);
+        System.out.println(Arrays.toString(nums2));
+    }
+
 }
